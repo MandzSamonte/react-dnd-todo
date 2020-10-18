@@ -4,7 +4,7 @@ import { Droppable } from 'react-beautiful-dnd';
 import Todo from './Todo';
 
 function Column(props) {
-  const { column } = props;
+  const { column, onDelete } = props;
 
   return (
     <div className="column">
@@ -23,6 +23,7 @@ function Column(props) {
                   key={todo.id}
                   todo={todo}
                   index={index}
+                  onDelete={() => onDelete(column.id, todo)}
                 />
               ))
             }

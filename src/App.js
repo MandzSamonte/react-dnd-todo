@@ -94,8 +94,23 @@ class App extends Component {
     })
   }
 
-  onDelete = () => {
+  onDelete = (columnId, selectedTodo) => {
+    let newItems = this.state.items.map(item => {
+      if(item.id === columnId) {
+        let newTodos = item.todos.filter(todo => todo.id !== selectedTodo.id);
 
+        return {
+          ...item,
+          todos: newTodos
+        }
+      }
+
+      return item;
+    })
+
+    this.setState({
+      items: newItems
+    })
   }
 
 
@@ -121,6 +136,7 @@ class App extends Component {
                   <Column
                     key={item.id}
                     column={item}
+                    onDelete={this.onDelete}
                   />
                 ))
               }

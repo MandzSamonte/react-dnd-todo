@@ -27,7 +27,24 @@
       padding: .5rem;
       margin-bottom: .5rem;
       display: flex;
+      justify-content: space-between;
       align-items: center;
+
+      .delete-button {
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        border-radius: 50px;
+        background-color: #b80009;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #ff000c;
+        }
+      }
     }
   }
 }

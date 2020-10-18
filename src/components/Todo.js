@@ -2,7 +2,7 @@ import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
 function Todo(props) {
-  const { todo, index } = props;
+  const { todo, index, onDelete } = props;
 
   return (
     <Draggable
@@ -17,6 +17,13 @@ function Todo(props) {
           className="todo"
         >
           { todo.name }
+
+          <button
+            onClick={onDelete}
+            className="delete-button"
+          >
+            x
+          </button>
         </div>
       )}
     </Draggable>
